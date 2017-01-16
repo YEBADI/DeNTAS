@@ -68,17 +68,44 @@ for (file, result) in zip(files, results):
 ### this option for Blast will output a table with the following columns
 # 1) Query ID, 2) Match ID, 3) E-value, 4) Match description
 
+### this next pice of code extracts the FPKM value and rearranges the columns into a more user firednly format
+# 1) match ID, 2) E-value ID, 3) FPKM, 4) brief description
+
+files = ('10s0r1.blast.txt' ,'12s0r3.blast.txt' , '14s8r2.blast.txt', \
+	'16s24r1.blast.txt', '18s24r3.blast.txt', '11s0r2.blast.txt', \
+	'13s8r1.blast.txt','15s8r3.blast.txt','17s24r2.blast.txt')  
+intermediates = ('10s0r1.int.txt','12s0r3.int.txt', '14s8r2.int.txt', \
+	'16s24r1.int.txt', '18s24r3.int.txt', '11s0r2.int.txt', \
+	'13s8r1.int.txt','15s8r3.int.txt','17s24r2.int.txt')  
+results = ('10s0r1.txt', '12s0r3.txt','12s0r3.txt', '14s8r2.txt', \
+	'16s24r1.txt', '18s24r3.txt', '11s0r2.txt', \
+	'13s8r1.txt','15s8r3.txt','17s24r2.txt')   
+
+
+for (file,intermediate)  in zip(files,intermediates):
+	cmd = "awk -F ';' '/^asmbl/{print $2; next}{print}' < ", file, " > ", intermediate
+	cmd = ''.join(cmd)
+	#print cmd
+	os.system(cmd)
+    #print("done")
+
+for (intermediate,result)  in zip(intermediates,results):
+    cmd = "awk \'{out= $2 \"\\t\" $3 \"\\t\" $1 \"\\t\"; for(i=7;i<=NF;i++){out=out" "$i}; print out}' ", " < " , intermediate, " > ", result
+    cmd = ''.join(cmd)
+    os.system(cmd)
+
+print "done"  
+
+
+
 ### the following issues remain with this approach:
-### 1) how to extract the FPKM data
 ### 2) not choosing our own thresholding values
 ### 3) this approach returns multiple hits for some of the queries (ie transcript variants) 
-### 3) ideally aftyer the blast we could add the FPKM value corresponding to each 
-###    Match ID to the results.blast.txt file before reading into R
 ### 4) I'm having trouble running blast on my computer so have been preparing the data files locally 
 ###    and then running the blast on apocrita
 
 
-b
+
 
 
 
