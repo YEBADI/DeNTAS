@@ -16,12 +16,17 @@ library(dendextend)
 library(gplots)
 library(calibrate)
 
-################ loading in the data ####################
 
-files <- c('10s0r1.txt', '11s0r2.txt', '12s0r3.txt',
-           '13s8r1.txt','14s8r2.txt', '15s8r3.txt',
-            '16s24r1.txt', '17s24r2.txt', '18s24r3.txt')
-# read.delim(files[x], nrow=y) # use to check file content
+# Reading in the variables set by python
+myArgs <- commandArgs(trailingOnly = TRUE)
+genes  <- read.table(file=myArgs[1], fill = TRUE)
+myArgs <- myArgs[2:length(myArgs)]
+
+x <- length(myArgs)
+files  <- c(myArgs[1:(x/2)])
+group  <- as.factor(c(myArgs[((x/2)+1):x]))
+
+################ loading in the data ####################
 
 ### readDGE function creates a DGEList-object containing 1) sample info  & 2) expression matrix 
 x <- readDGE(files, columns=c(1,3))
@@ -31,17 +36,13 @@ x <- readDGE(files, columns=c(1,3))
 
 ### adding additional experimetal group information
 samplenames <- colnames(x)
-group <- as.factor(c("Uninfected", "Uninfected", "Uninfected", "Hendra_8hrs", "Hendra_8hrs", "Hendra_8hrs", 
-                     "Hendra_24hrs", "Hendra_24hrs", "Hendra_24hrs"))
 x$samples$group <- group
 #x$samples$group
 
-### reading in the gene reference table
-### col1= ref_seqID, col2=long gene name, col3 = gene symbol
-genes <- read.table(file="gene_list.txt", fill = TRUE)
+### adding in titles to the gene reference table
 colnames(genes) <- c('ref_seqID', 'gene', 'symbol')
 rownames(genes) <- genes$ref_seqID
-# head(genes) # inspecting the data
+#head(genes) # inspecting the data
 
 ########### writing out a data matrix for the user to download #############
 
