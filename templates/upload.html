@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>Upload</title>
+<meta charset="UTF-8">
+<style>
+body {font-family: "Raleway", Arial, sans-serif;
+      background-image: url(static/background.png);
+      background-size: cover;
+      background-color: hsla(0,0%,0%,1);}
+</style>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body>
+
+<!-- Navbar -->
+ <div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="/" class="w3-btn-block w3-hover-white">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.html" class="w3-btn-block w3-hover-white">ABOUT US</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="https://github.com/Sakimonk/mandarin" class="w3-btn-block w3-hover-white">CONTACT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="http://www.qmul.ac.uk/about/howtofindus/mileend/" class="w3-btn-block w3-hover-white">FIND US</a>
+    </div>
+  </div>
+</div>
+
+<!-- Analysis -->
+    <div id ="loading"></div>
+    <div id="content" class="container">
+      <div class="header">
+        <h3 class="text-muted">Uploaded files</h3>
+      </div>
+ 
+      <form action=/results method="POST" > 
+      <div>
+      Select an experimental group:
+      <ol>
+        {% for file in filenames %}
+          <li><a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
+	  <!--  <form action="demo_form.asp">
+          Experimental group: <input type="text" name="fname"><br>
+          </form> -->
+          <form action="demo_form.asp">
+          Experimental group: <input type="text" name="fname"><br>
+          </form>
+          <select name="experimental group">
+          <option value={{groups[0]}}>{{groups[0]}}</option>
+          <option value={{groups[1]}}>{{groups[1]}}</option>
+          <option value={{groups[2]}}>{{groups[2]}}</option>
+          <option value={{groups[3]}}>{{groups[3]}}</option>
+          </select> </li> 
+        {% endfor %}
+      </ol>
+
+      </div>
+      <div class="header">
+        <h3 class="text-muted">Analyze</h3>
+      </div>
+	<div style="text-align:center">
+	<form>
+       <input type="submit" value="SUBMIT" class="w3-btn w3-padding-large w3-margin-bottom" onclick="loading();">
+       </form> 
+	</div>
+
+      </div>
+     
+
+</body>
+</html>
