@@ -30,11 +30,22 @@ def allowed_file(filename):
 def main():
     return render_template('index2.html')
 
+@app.route('/choose', methods=['POST'])
+def choose():
+    return render_template('choose_uploads.html')
+
+
 @app.route('/upload', methods=['POST'])
 def upload():
     # Get the name of the uploaded files
     uploaded_files = request.files.getlist("file[]")
     filenames = []
+    g1 = request.form.get('Group 1')
+    g2 = request.form.get('Group 2')
+    g3 = request.form.get('Group 3')
+    g4 = request.form.get('Group 4')
+    groups = [g1, g2 , g3 , g4]
+
     for file in uploaded_files:
         # Check if the file is one of the allowed types/extensions
         if file and allowed_file(file.filename):
@@ -48,21 +59,21 @@ def upload():
             # Redirect the user to the uploaded_file route, which
             # will basicaly show on the browser the uploaded file
             # Load an html page with a link to each uploaded file
-    return render_template('upload.html', filenames=filenames)
+    return render_template('upload.html', filenames=filenames, groups=groups)
 
 
- #
+
 @app.route('/results', methods=['POST'])
 def analyze():
-    groups = request.form.getlist('experimental group')
-    path = './uploads'
-    raw_files = os.listdir(path)[1:len(os.listdir(path))]
-    module.data_prep(raw_files)
-    blast_results = module.run_blast(raw_files)
-    module.format_blast(blast_results)
-    module.genelist()
-    module.R_analysis(groups)
-    return render_template('results.html')
+    # groups = request.form.getlist('experimental group')
+    # path = './uploads'
+    # raw_files = os.listdir(path)[1:len(os.listdir(path))]
+    # module.data_prep(raw_files)
+    # blast_results = module.run_blast(raw_files)
+    # module.format_blast(blast_results)
+    # module.genelist()
+    # module.R_analysis(groups)
+    return render_template('results2.html')
     
 
 # This route is expecting a parameter containing the name of a file. Then it will locate that 

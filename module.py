@@ -50,8 +50,9 @@ def format_blast(blast_results):
 
     ## this code reformats the tables
     for (int_1, int_2)  in zip( ints_1, ints_2):
-        cmd = "awk \'{out= $2 \"\\t\" $3 \"\\t\" $1 \"\\t\"; for(i=7;i<=NF;i++){out=out" "$i}; print out}' < temp/" , int_1, " > temp/", int_2
+        cmd = "awk \'{out= $2 \"\\t\" $3 \"\\t\" $1 \"\\t\"; for(i=7;i<=NF;i++){out=out " "$i \"_\" }; print out}' < temp/" , int_1, " > temp/", int_2
         cmd = ''.join(cmd)
+        print (int_2, "done")
         os.system(cmd)
 
     ## this code removes duplicates & saves output in blast/ for use by R
@@ -70,7 +71,7 @@ def format_blast(blast_results):
     os.system(cmd)
 
 def genelist():
-    cmd= "cat blast/b* | sort -u -k1,1 | awk '{out= $1 \"\\t\" $4; print out}' | awk -F '[()]' '{out= $1$2$3$4$5 \"\\t\" $2; print out}' > blast/1_gene_list.txt"
+    cmd= "cat blast/b* | sort -u -k1,1 | awk '{out= $1 \"\\t\" $4; print out}' | awk -F '[()]' '{out= $1$2$3$4$5 \"\\t\" $2 \"\\t\" $4 ; print out}' | awk '{print $1 \"\\t\" $2 \"\\t\" $NF}' > blast/1_gene_list.txt"
     os.system(cmd)
 
 
