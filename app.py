@@ -34,6 +34,9 @@ def main():
 def choose():
     return render_template('choose_uploads.html')
 
+@app.route('/loader', methods=['POST'])
+def loader():
+    return render_template('loader.html')
 
 @app.route('/upload', methods=['POST'])
 def upload():
