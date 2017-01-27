@@ -2,13 +2,17 @@
 <html>
 <title>Results</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="static/js/jquery.csvToTable.js"></script>
+<script src="static/js/jquery.tablesorter.dev.js"></script>
+<script src="static/js/perfect-scrollbar.jquery.js"></script>
 <style>
 body {font-family: "Raleway", Arial, sans-serif;
       background-image: url(static/background.png);
       background-size: cover;
       background-color: hsla(0,0%,0%,1);}
 </style>
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <body>
 
 <!-- Navbar -->
@@ -29,83 +33,129 @@ body {font-family: "Raleway", Arial, sans-serif;
   </div>
 </div>
 
-<!-- Line break -->
-<br />
-<br />
 
-<!-- !Page Content! -->
+<!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
 
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32"> 
-  <h1> R Graphics </h1>
+  <h1><b>R Graphics Output</b></h1>
 </header>
 
 <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/1.PCA_all_data.png" download>
-      <img src="static/1.PCA_all_data.png" alt="PCA" style="width:100%"></a>
+      <a href="static/results/graphs/1.PCA_all_data.png" download>
+      <img src="static/results/graphs/1.PCA_all_data.png" alt="PCA" style="width:100%"></a>
       <h3>PCA all data</h3>
     </div>
 </div>
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/2.HC_all_data.png" download>
-      <img src="static/2.HC_all_data.png" alt="HC" style="width:100%"></a>
+      <a href="static/results/graphs/2.HC_all_data.png" download>
+      <img src="static/results/graphs/2.HC_all_data.png" alt="HC" style="width:100%"></a>
       <h3>HC all data</h3>
     </div>
 </div>
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/3.Uninf_vs_H_8hrs_Volcano.png" download>
-      <img src="static/3.Uninf_vs_H_8hrs_Volcano.png"  alt="Volcano plot" style="width:100%"></a>
+      <a href="static/results/graphs/3.grp1_vs_grp2_Volcano.png" download>
+      <img src="static/results/graphs/3.grp1_vs_grp2_Volcano.png"  alt="Volcano plot" style="width:100%"></a>
       <h3>Volcano plot</h3>
     </div>
 </div>
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/4.Uninf_vs_H_24hrs_Volcano.png" download>
-      <img src="static/4.Uninf_vs_H_24hrs_Volcano.png" alt="Volcano plot" style="width:100%"></a>
+      <a href="static/results/graphs/4.grp1_vs_grp3_Volcano.png" download>
+      <img src="static/results/graphs/4.grp1_vs_grp3_Volcano.png" alt="Volcano plot" style="width:100%"></a>
       <h3>Volcano plot</h3>
     </div>
 </div>
 </div>
 
   
-<!-- Second Photo Grid-->
+  <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/5.H_8hrs_vs_H_24hrs_Volcano.png" download>
-      <img src="static/5.H_8hrs_vs_H_24hrs_Volcano.png"  alt="Volcano plot" style="width:100%"></a>
+      <a href="static/results/graphs/5.grp2_vs_grp3_Volcano.png" download>
+      <img src="static/results/graphs/5.grp2_vs_grp3_Volcano.png"  alt="Volcano plot" style="width:100%"></a>
       <h3>Volcano plot</h3>
     </div>
 </div>
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/6.Topgenes_Heatmap.png" download>
-      <img src="static/6.Topgenes_Heatmap.png" alt="Heatmap" style="width:100%"></a>
+      <a href="static/results/graphs/6.Topgenes_Heatmap.png" download>
+      <img src="static/results/graphs/6.Topgenes_Heatmap.png" alt="Heatmap" style="width:100%"></a>
       <h3>Heatmap topgenes</h3>
     </div>
 </div>
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/7.PCA_topgenes.png" download>
-      <img src="static/7.PCA_topgenes.png" alt="PCA" style="width:100%"></a>
+      <a href="static/results/graphs/7.PCA_topgenes.png" download>
+      <img src="static/results/graphs/7.PCA_topgenes.png" alt="PCA" style="width:100%"></a>
       <h3>PCA topgenes</h3>
     </div>
 </div>
     <div class="w3-quarter">
 <div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
-      <a href="static/8.HC_topgenes.png" download>
-      <img src="static/8.HC_topgenes.png" alt="HC" style="width:100%"></a>
+      <a href="static/results/graphs/8.HC_topgenes.png" download>
+      <img src="static/results/graphs/8.HC_topgenes.png" alt="HC" style="width:100%"></a>
       <h3>HC topgenes</h3>
     </div>
   </div>
 </div>
- 
+
+<input type="text" id="search" placeholder=" type to search"></input>
+
+<div id="table", class="w3-container w3-padding-64 w3-center"> 
+<tbody></tbody>
+</div>
+<link rel="stylesheet" href="static/css/csvtable.css" type="text/css" />
+
+<script>
+$('#table').CSVToTable('static/results/tables/6.de_all_with_evalues.tsv', {
+  startLine: 0,
+  separator: "\t"
+ }
+).bind("loadComplete",function() {
+$('#table').find('table').tablesorter();
+});;
+</script>
+
+<script>
+document.getElementById("table").setAttribute("style","overflow-y:auto;height:400px");
+</script>
+<script>
+
+$(function() {
+    $('#table').perfectScrollbar();
+
+    // // with vanilla JS!
+    // Ps.initialize(document.getElementById('Demo'));
+});
+</script>
+
+<script>
+$("#search").keyup(function () {
+    var value = this.value.toLowerCase().trim();
+
+    $("table tr").each(function (index) {
+        if (!index) return;
+        $(this).find("td").each(function () {
+            var id = $(this).text().toLowerCase().trim();
+            var not_found = (id.indexOf(value) == -1);
+            $(this).closest('tr').toggle(!not_found);
+            return not_found;
+        });
+    });
+});
+</script>
+
+
+
+
 <!-- End page content -->
 </div>
 
