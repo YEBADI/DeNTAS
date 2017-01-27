@@ -1,3 +1,7 @@
+#running blast off of apocrita
+#ssh [secret key]
+#scp [upload files]
+
 #!/usr/bin/python
 
 ### Biopython Blast search 
