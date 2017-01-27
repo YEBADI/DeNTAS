@@ -1,5 +1,5 @@
 #running blast off of apocrita
-#ssh [secret key]
+#ssh [secret key] @login.hpc.qmul.ac.uk
 #scp [upload files]
 
 #!/usr/bin/python
