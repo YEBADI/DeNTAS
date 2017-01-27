@@ -9,6 +9,10 @@ body {font-family: "Raleway", Arial, sans-serif;
       background-color: hsla(0,0%,0%,1);}
 </style>
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="static/js/jquery.csvToTable.js"></script>
+<script src="static/js/jquery.tablesorter.dev.js"></script>
+<script src="static/js/perfect-scrollbar.jquery.js"></script>
 <body>
 
 <!-- Navbar -->
@@ -105,7 +109,49 @@ body {font-family: "Raleway", Arial, sans-serif;
     </div>
   </div>
 </div>
- 
+
+<input type="text" id="search" placeholder=" type to search"></input>
+
+<div id="table", class="w3-container w3-padding-64 w3-center"> 
+<tbody></tbody>
+</div>
+<link rel="stylesheet" href="static/css/csvtable.css" type="text/css" />
+
+<script>
+$('#table').CSVToTable('static/results/tables/6.de_all_with_evalues.tsv', {
+  startLine: 0,
+  separator: "\t"
+ }
+).bind("loadComplete",function() {
+$('#table').find('table').tablesorter();
+});;
+</script>
+
+<script>
+document.getElementById("table").setAttribute("style","overflow-y:auto;height:400px");
+</script>
+<script>
+
+$(function() {
+    $('#table').perfectScrollbar();
+});
+</script>
+
+<script>
+$("#search").keyup(function () {
+    var value = this.value.toLowerCase().trim();
+
+    $("table tr").each(function (index) {
+        if (!index) return;
+        $(this).find("td").each(function () {
+            var id = $(this).text().toLowerCase().trim();
+            var not_found = (id.indexOf(value) == -1);
+            $(this).closest('tr').toggle(!not_found);
+            return not_found;
+        });
+    });
+});
+</script>
 <!-- End page content -->
 </div>
 
