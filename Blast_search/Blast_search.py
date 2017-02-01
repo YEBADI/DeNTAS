@@ -56,13 +56,10 @@ results = ('10s0r1.blast.txt','12s0r3.blast.txt', '14s8r2.blast.txt', \
 
 
 for (file, result) in zip(files, results):
-	cmd="blastn -db reference.fasta.txt -query ", file, " -outfmt \"6 qseqid sseqid evalue stitle\" -max_target_seqs 1 -out", result
+	cmd="blastn -query ", file, " -db reference.fasta.txt -evalue 0.001 -outfmt \"6 qseqid sseqid evalue stitle\" -max_target_seqs 1 -out", result
 	cmd=''.join(cmd)
 	os.system(cmd)
 	print (result, "complete")
-
-# when you call blastn
-#blastn -query /path/to/myquery.fasta -db /path/to/db -evalue 0.001 -out /path/to/myoutput.tsv -outfmt "6 qacc sacc sseqid evalue qstart qend sstart send"
 	
 ### this option for Blast (-outfmt "6 qseqid sseqid evalue stitle") will output a table with the following columns
 # 1) Query ID, 2) Match ID, 3) E-value, 4) Match description
