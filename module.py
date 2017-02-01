@@ -56,6 +56,7 @@ def format_blast(blast_results):
         os.system(cmd)
 
     ## this code removes duplicates & saves output in blast/ for use by R
+    # this needs to be optimised so it isn't randomly deleting redundant duplicates - may be valuable information
     print("removing duplicates")
 
     for (int_2,blast_result) in zip(ints_2, blast_results):
