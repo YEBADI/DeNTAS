@@ -21,9 +21,9 @@ def run_blast(raw_files):
         blast_results.append(result)
 
     for (file, blast_result) in zip(raw_files, blast_results):
-        # cmd="blastn -db reference.fasta.txt -query temp/", file, " -outfmt \"6 qseqid sseqid evalue stitle\" -max_target_seqs 1 -out temp/", result
-        # cmd=''.join(cmd)
-        # os.system(cmd)
+        cmd="blastn -query ", file, " -db reference.fasta.txt -evalue 0.001 -outfmt \"6 qseqid sseqid evalue stitle\" -max_target_seqs 1 -out", result
+        cmd=''.join(cmd)
+        os.system(cmd)
         print (blast_result, "complete")
     return blast_results
 
