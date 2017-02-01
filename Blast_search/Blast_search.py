@@ -56,7 +56,7 @@ results = ('10s0r1.blast.txt','12s0r3.blast.txt', '14s8r2.blast.txt', \
 
 
 for (file, result) in zip(files, results):
-	cmd="blastn -db reference.fasta.txt -query ", file, " -outfmt \"6 qseqid sseqid evalue stitle\" -max_target_seqs 1 -out", result
+	cmd="blastn -db reference.fasta.txt -query ", file, " -outfmt \"6 qseqid sseqid evalue 0.0005 stitle\" -max_target_seqs 1 -out", result
 	cmd=''.join(cmd)
 	os.system(cmd)
 	print (result, "complete")
