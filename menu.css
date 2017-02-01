@@ -1,0 +1,32 @@
+
+*{
+    margin:0px auto;
+    padding:0px;
+}
+.menu{
+height:50px;
+background-color:steelblue;  
+width:1100px;
+margin-top:2px;
+font-size:16px;
+font-family:Tahoma, Geneva, Sans-serif;
+font-weight:bold;
+text-align:center; 
+}
+.menu ul{
+    height:auto;
+    padding:8px, 0px;
+    margin:0px;
+}
+.menu ul li{
+    display:inline;
+}
+.menu ul li a{
+    color:yellow;
+    padding:50px;
+    margin:10px;
+    text-decoration:none;
+}
+.menu ul li a:hover{
+    color:white;
+}
