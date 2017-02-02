@@ -1,3 +1,7 @@
+# Could have raw_input from user for number of columns and use this object throughout so it overcomes the 3 groups barrier?
+#alternatively if this proves to be too difficult; to meet the deadline we can have a set of hardcoded R scripts for various group numbers
+#and call the appropriate script according to the number of groups the end-user picks in FLASK
+
 ##### RNA-seq analysis of FPKM data using limma & edgeR
 
 rm (list =ls())  # clear the workkspace
