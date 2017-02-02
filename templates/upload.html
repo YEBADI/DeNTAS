@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<title>Upload</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif;
+      background-image: url(static/images/background.png);
+      background-size: cover;
+      background-color: hsla(0,0%,0%,1);}
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+</style>
+<body>
+
+
+<!-- Navbar -->
+ <div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="/" class="w3-btn-block w3-hover-white">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.html" class="w3-btn-block w3-hover-white">ABOUT US</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="https://github.com/Sakimonk/mandarin" class="w3-btn-block w3-hover-white">CONTACT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="http://www.qmul.ac.uk/about/howtofindus/mileend/" class="w3-btn-block w3-hover-white">FIND US</a>
+    </div>
+  </div>
+</div>
+
+  <body>
+    <div id ="loading"></div>
+    <div id="content" class="container">
+      <div class="header">
+        <h3 class="text-muted">Uploaded files</h3>
+      </div>
+      <hr/>
+      <form action=/results method="POST" >
+      <div>
+      Please select an experimental group for each of your uploaded files:
+      <ol>
+        {% for file in filenames %}
+          <li><a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
+         <!--  <form action="demo_form.asp">
+          Experimental group: <input type="text" name="fname"><br>
+          </form> -->
+          <select name="experimental group">
+          <option value={{groups[0]}}>{{groups[0]}}</option>
+          <option value={{groups[1]}}>{{groups[1]}} </option>
+          <option value={{groups[2]}} >{{groups[2]}} </option>
+          <option value={{groups[3]}} >{{groups[3]}} </option>
+          </select> </li> 
+        {% endfor %}
+      </ol>
+
+      </div>
+      <div class="header">
+        <h3 class="text-muted">Ready to Analyze data</h3>
+      </div>
+       
+       <input type="submit" value="Submit"  onclick="loading();">
+       </form>
+
+      </div>
+    </div>
+    </div>
+  </body>
+
+  <div class="modal"><!-- Place at bottom of page --></div>
+  <script>
+  $body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
+});
+</script>
+</html>
+
+
