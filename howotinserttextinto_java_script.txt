@@ -1,0 +1,58 @@
+Hi Kristina, I hope this helps! If you save it at html you can see the script better.
+
+
+####### how to insert text into a div javascript
+var theDiv = document.getElementById("<ID_OF_THE_DIV>");
+var content = document.createTextNode("<YOUR_CONTENT>");
+theDiv.appendChild(content);
+###########################
+ DESCRIPTION: This javascript code is used to add textbox element dynamically in page or form. You need to call one function "addTextBox()". 
+ Its a easy to modify this script as per your requirement.
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dynamic Textbox</title>
+<script type='text/javascript'>
+// --------------------------------------------------------
+// Author  : Daxa
+// Website : http://www.beyondmart.com/
+// --------------------------------------------------------
+	
+	var inival=0; // Initialise starting element number
+	
+	// Call this function to add textbox
+	function addTextBox()
+	{
+		var newArea = add_New_Element();
+		var htcontents = "<input type='text' name='textbx[]'/>"; 
+		document.getElementById(newArea).innerHTML = htcontents; // You can any other elements in place of 'htcontents' 
+	}
+	
+	
+	function add_New_Element() {
+		  inival=inival+1;  // Increment element number by 1
+		  var ni = document.getElementById('area');
+		  var newdiv = document.createElement('div'); // Create dynamic element
+		  var divIdName = 'my'+inival+'Div';
+		  newdiv.setAttribute('id',divIdName);
+		  ni.appendChild(newdiv);
+		  return divIdName;
+	}
+
+</script>
+</head>
+<body>
+
+<!-- Just call function 'addTextBox()' to add textbox -->
+<a onclick='addTextBox()' href='#'>Add New Text Box </a>
+
+<br/>
+<!-- Textbox will be added in followng DIV -->
+<div id='area'></div>
+
+</body>
+</html>
+Last edited by jscheuer1; 07-28-20
+
+
