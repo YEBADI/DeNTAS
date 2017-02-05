@@ -8,6 +8,7 @@ from werkzeug import secure_filename
 import module
 import subprocess
 import os
+import uuid
 
 
 
@@ -49,6 +50,13 @@ def upload():
     g3 = request.form.get('Group 3')
     g4 = request.form.get('Group 4')
     groups = [g1, g2 , g3 , g4]
+    #now we're making a unique user ID and saving it to the session (cookie)
+    session['user'] = uuid.uuid1()
+    user_folder = os.path.join(app.config['UPLOAD_FOLDER'], session['user'])
+    
+    #if path doesn't exist then make it
+    if not os.path.exists(user_folder):
+        os.makedirs(user_folder)
 
     for file in uploaded_files:
         # Check if the file is one of the allowed types/extensions
@@ -57,7 +65,8 @@ def upload():
             filename = secure_filename(file.filename)
             # Move the file form the temporal folder to the upload
             # folder we setup
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #now each user folder is unique and files are saved respectively there
+            file.save(os.path.join(user_folder, filename))
             # Save the filename into a list, we'll use it later
             filenames.append(filename)
             # Redirect the user to the uploaded_file route, which
