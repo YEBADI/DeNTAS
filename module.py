@@ -12,7 +12,8 @@ def data_prep(raw_files):
         os.system(cmd)
         print (raw_file, "done")
 
-def apocrita_upload():
+def apocrita_upload(user_id):
+    files = "/uploads/" + user_id + "/*.txt"
     cmd = "scp ./uploads/*.txt bt16003@login.hpc.qmul.ac.uk:/data/scratch/bt16003/group_project/raw"
     print cmd 
     os.system(cmd)
@@ -22,8 +23,10 @@ def apocrita_blast():
     print cmd 
     os.system(cmd)
 
-def apocrita_download():
-    cmd = "scp bt16003@login.hpc.qmul.ac.uk:/data/scratch/bt16003/group_project/results/* ./blast/"
+def apocrita_download(user_id):
+    remote_folder = "/data/scratch/bt16003/group_project/results/" + user_id + "/*"
+    local_folder = "./blast/" + user_id + '/'
+    cmd = "scp bt16003@login.hpc.qmul.ac.uk:" + remote_folder + " " + local_folder 
     os.system(cmd)
     print "blast results downloaded"
 
@@ -31,13 +34,12 @@ def pdf_combine():
     cmd= "gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=static/results/graphs/all_graphs.pdf static/results/graphs/*.pdf"
     os.system(cmd)
 
-def R_analysis(groups):
-    path='./blast'
+def R_analysis(groups, user_id):
+    path='./blast/' + user_id
     x = os.listdir(path)[1:len(os.listdir(path))]
     files=[]
     for file in x:
-        file= ('blast/',file)
-        file= ''.join(file)
+        file= os.path.join('blast', user_id, file)
         files.append(file)
     print x
     command = 'Rscript'
@@ -47,13 +49,13 @@ def R_analysis(groups):
     subprocess.call(cmd, universal_newlines=True)
     return "analysis complete"
 
-def clean_up():
-    cmd = 'rm blast/*' 
+def clean_up(user_id):
+    cmd = 'rm blast/' + user_id + '/*' 
     os.system(cmd)
-    cmd = 'rm uploads/*' 
+    cmd = 'rm uploads/' + user_id + '/*' 
     os.system(cmd)
-    cmd = "ssh bt16003@login.hpc.qmul.ac.uk 'rm /data/scratch/bt16003/group_project/raw/*' "
+    cmd = "ssh bt16003@login.hpc.qmul.ac.uk 'rm /data/scratch/bt16003/group_project/raw/" + user_id + "/*' " 
     os.system(cmd)
-    cmd = "ssh bt16003@login.hpc.qmul.ac.uk 'rm /data/scratch/bt16003/group_project/results/*' "
+    cmd = "ssh bt16003@login.hpc.qmul.ac.uk 'rm /data/scratch/bt16003/group_project/results/" + user_id + "/*' "
     os.system(cmd)
 
