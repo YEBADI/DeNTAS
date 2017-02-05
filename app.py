@@ -8,7 +8,7 @@ from werkzeug import secure_filename
 import module
 import subprocess
 import os
-import session
+
 
 
 app = Flask(__name__)
@@ -88,4 +88,7 @@ def uploaded_file(filename=None):
                                filename)
 
 if __name__ == "__main__":
+    app.secret_key = "t3tmiU+u7VXna4M98i+G3IXqjZ5ZSmrviQgbiyy5Tcw6kdwu/uZ0gw+0pLbzRsBINFjc6FjRd9QTsbByFSmS9w=="
     app.run()
+
+    
