@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <title>Upload</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -9,44 +8,17 @@ body {font-family: "Raleway", Arial, sans-serif;
       background-image: url(static/images/background.png);
       background-size: cover;
       background-color: hsla(0,0%,0%,1);}
-.modal {
-    display:    none;
-    position:   fixed;
-    z-index:    1000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    background: rgba( 255, 255, 255, .8 ) 
-                url('http://i.stack.imgur.com/FhHRx.gif') 
-                50% 50% 
-                no-repeat;
-}
-
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
-body.loading {
-    overflow: hidden;   
-}
-
-/* Anytime the body has the loading class, our
-   modal element will be visible */
-body.loading .modal {
-    display: block;
-}
-
 </style>
 <body>
 
-
-<!-- Navbar -->
+<!-- Navigation bar -->
  <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="/" class="w3-btn-block w3-hover-white">HOME</a>
+      <a href="index2.html" class="w3-btn-block w3-hover-white">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.html" class="w3-btn-block w3-hover-white">ABOUT US</a>
+      <a href="about.html" class="w3-btn-block w3-hover-white">ABOUT</a>
     </div>
     <div class="w3-col s3">
       <a href="https://github.com/Sakimonk/mandarin" class="w3-btn-block w3-hover-white">CONTACT</a>
@@ -57,53 +29,47 @@ body.loading .modal {
   </div>
 </div>
 
-  <body>
-    <div id ="loading"></div>
-    <div id="content" class="container">
-      <div class="header">
-        <h3 class="text-muted">Uploaded files</h3>
-      </div>
-      <hr/>
-      <form action=/results method="POST" >
+<!-- Container -->
+<div class="w3-container w3-padding-64 w3-center">
+  <div id="content" style="width:980px;margin:0 auto;"></div>
+    <div class="w3-container w3-padding-64 w3-center">
+      <div class="w3-display-middle w3-padding w3-hide-small" style="width:35%">
+         <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+
+<!-- Group selection -->
+             
+      <form action=/results method="POST" > 
+       <p>Organism:</p>
+            <i><select name="organism">
+             <option value="P. alecto">P. alecto</option>
+             <option value="H. sapiens">H. sapiens</option>
+             <option value="M. musculus">M. musculus</option>
+            </select></i>
       <div>
-      Please select an experimental group for each of your uploaded files:
+      Select an experimental group:
       <ol>
         {% for file in filenames %}
           <li><a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
-         <!--  <form action="demo_form.asp">
-          Experimental group: <input type="text" name="fname"><br>
-          </form> -->
           <select name="experimental group">
           <option value={{groups[0]}}>{{groups[0]}}</option>
-          <option value={{groups[1]}}>{{groups[1]}} </option>
-          <option value={{groups[2]}} >{{groups[2]}} </option>
-          <option value={{groups[3]}} >{{groups[3]}} </option>
+          <option value={{groups[1]}}>{{groups[1]}}</option>
+          <option value={{groups[2]}}>{{groups[2]}}</option>
+          <option value={{groups[3]}}>{{groups[3]}}</option>
           </select> </li> 
         {% endfor %}
       </ol>
-
       </div>
-      <div class="header">
-        <h3 class="text-muted">Ready to Analyze data</h3>
-      </div>
-       
-       <input type="submit" value="Submit"  onclick="loading();">
-       </form>
 
-      </div>
-    </div>
-    </div>
-  </body>
+<!-- Submit button -->
+<div style="text-align:center">
+ <form>
+  <input type="submit" value="SUBMIT" class="w3-btn w3-padding-large w3-margin-bottom w3-hover-white" onclick="loading();">
+ </form> 
+</div>
+      
+</div>
+</div>
+     
 
-  <div class="modal"><!-- Place at bottom of page --></div>
-  <script>
-  $body = $("body");
-
-$(document).on({
-    ajaxStart: function() { $body.addClass("loading");    },
-     ajaxStop: function() { $body.removeClass("loading"); }    
-});
-</script>
+</body>
 </html>
-
-

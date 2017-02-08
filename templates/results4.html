@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Results</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="static/css/csvtable.css" type="text/css" /> 
+<style>
+      body {font-family: "Raleway", Arial, sans-serif;
+      background-image: url(static/images/background.png);
+      background-size: cover;
+      background-color: hsla(0,0%,0%,1);}
+</style>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="static/js/jquery.csvToTable.js"></script>
+<script src="static/js/jquery.tablesorter.dev.js"></script>
+</head>
+<body>
+
+<!-- Navigation bar -->
+ <div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="/" class="w3-btn-block w3-hover-white">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/about" class="w3-btn-block w3-hover-white">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="https://github.com/Sakimonk/mandarin" class="w3-btn-block w3-hover-white">CONTACT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="http://www.qmul.ac.uk/about/howtofindus/mileend/" class="w3-btn-block w3-hover white">FIND US</a>
+    </div>
+  </div>
+</div>
+
+<!-- Line break -->
+<br />
+<br />
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Results</b></h1>
+</header>
+
+<!-- JavaScript popup boxes-->
+<script>
+function PCA_popup() {
+    alert("Horizontal axis represents PCA1 while vertical axis represents PCA2 of the data. Each data point has been identified to the original group in the data that it came from. PCA helps to show how a partcular individual is positioned in  2D projection.");
+}
+</script>
+<script>
+function Dendrogram_popup() {
+    alert("The vertical axis represents the distance or disimilarity between clusters while the horizontal axis represents objects or clusters.The color scheme represents the diffrent clusters in the data.");
+}
+</script>
+<script>
+function Volcano_popup() {
+    alert("The vertical axis represents  – log10(p-values) while the horizontal axis represents the fold-change values for all genes in the data set.The horizontal axis indicate biologcal impact of the fold change, while the second indicates the reliability or statistical significance of that change. The upper corners of the plot represent genes that have both statistical significance and large fold changes.");
+}
+</script>
+<script>
+function Heatmap_popup() {
+    alert("Each row that represents a gene and each column represents a sample.The colour and intensity of the boxes represents changes in the gene expression. The color scheme represents up-regulated genes, down-regulated genes and  unchanged epression.");
+}
+</script>
+
+<!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-10 w3-center">
+    <div class="w3-quarter">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/1.PCA_all_data.pdf" download>
+      <img src="static/results/graphs/1.PCA_all_data.pdf" alt="PCA" style="width:100%"></a>
+<h4><button onclick="PCA_popup()">PCA all data</button></h4>
+
+
+    </div>
+</div>
+    <div class="w3-quarter">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/.HC_all_data.pdf" download>
+      <img src="static/results/graphs/2.HC_all_data.pdf" alt="HC" style="width:100%"></a>
+<h4><button onclick="Dendrogram_popup()">HC all data</button></h4>
+
+
+    </div>
+</div>
+    <div class="w3-quarter">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/7.PCA_topgenes.pdf" download>
+      <img src="static/results/graphs/7.PCA_topgenes.pdf" alt="PCA" style="width:100%"></a>
+<h4><button onclick="PCA_popup()">PCA topgenes</button></h4>
+
+    </div>
+</div>
+    <div class="w3-quarter">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/8.HC_topgenes.pdf" download>
+      <img src="static/results/graphs/8.HC_topgenes.pdf" alt="HC" style="width:100%"></a>
+  <h4><button onclick="Dendrogram_popup()">HC topgenes</button></h4>
+
+    </div>
+  </div>
+</div>
+
+  <!-- Third Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-third">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/Volcano_1.pdf" download>
+      <img src="static/results/graphs/Volcano_1.pdf"  alt="Volcano plot" style="width:100%"></a>
+<h4><button onclick="Volcano_popup()">Volcano plot</button></h4>
+
+    </div>
+</div>
+    <div class="w3-third">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/Volcano_2.pdf" download>
+      <img src="static/results/graphs/Volcano_2.pdf"  alt="Volcano plot" style="width:100%"></a>
+<h4><button onclick="Volcano_popup()">Volcano plot</button></h4>
+  
+    </div>
+</div>
+    <div class="w3-third">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/Volcano_3.pdf" download>
+      <img src="static/results/graphs/Volcano_3.pdf"  alt="Volcano plot" style="width:100%"></a>
+<h4><button onclick="Volcano_popup()">Volcano plot</button></h4>
+
+    </div>
+</div>
+<b></b>
+  <!-- Third Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-third">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/Volcano_4.pdf" download>
+      <img src="static/results/graphs/Volcano_4.pdf"  alt="Volcano plot" style="width:100%"></a>
+<h4><button onclick="Volcano_popup()">Volcano plot</button></h4>
+
+    </div>
+</div>
+    <div class="w3-third">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/Volcano_5.pdf" download>
+      <img src="static/results/graphs/Volcano_5.pdf"  alt="Volcano plot" style="width:100%"></a>
+<h4><button onclick="Volcano_popup()">Volcano plot</button></h4>
+  
+    </div>
+</div>
+    <div class="w3-third">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/Volcano_6.pdf" download>
+      <img src="static/results/graphs/Volcano_6.pdf"  alt="Volcano plot" style="width:100%"></a>
+<h4><button onclick="Volcano_popup()">Volcano plot</button></h4>
+
+    </div>
+</div>
+</div>
+
+<!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-half-centre">
+<div class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">
+      <a href="static/results/graphs/6.Topgenes_Heatmap.pdf" download>
+      <img src="static/results/graphs/6.Topgenes_Heatmap.pdf" alt="Heatmap" style="width:100%"></a>
+  <h4><button onclick="Heatmap_popup()">Heatmap topgenes</button></h4>
+
+
+    </div>
+</div>
+
+<!--Line break -->
+<br />
+
+<!-- Search -->
+<div style="text-align:center">
+  <input type="text" id="search" placeholder="Search">
+</div>
+
+<!-- Header -->
+<header id="header" class="alt">
+  <p align="center"> The interactive table below represents all significantly diffrentially expressed genes. E-values are shown for all experimental comparisons.</p>
+</header>
+
+<!-- Table content -->
+<div style="text-align:center">
+   <div id="table" class="w3-container w3-padding-64 w3-center"> 
+</div>
+
+<script>
+$('#table').CSVToTable('static/results/tables/6.de_all_with_evalues.tsv', {
+  startLine: 0,
+  separator: "\t"
+ }
+).bind("loadComplete",function() {
+$('#table').find('table').tablesorter();
+});;
+</script>
+
+<script>
+document.getElementById("table").setAttribute("style","overflow-y:auto;height:400px");
+</script>
+
+<script>
+$(function() {
+    $('#table').perfectScrollbar();
+    // // with vanilla JS!
+    // Ps.initialize(document.getElementById('Demo'));
+});
+</script>
+
+<script>
+$("#search").keyup(function () {
+    var value = this.value.toLowerCase().trim();
+    $("table tr").each(function (index) {
+        if (!index) return;
+        $(this).find("td").each(function () {
+            var id = $(this).text().toLowerCase().trim();
+            var not_found = (id.indexOf(value) == -1);
+            $(this).closest('tr').toggle(!not_found);
+            return not_found;
+        });
+    });
+});
+</script>
+
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Line break -->
+<br />
+<br />
+<br />
+<br />
+<br /> 
+
+</body>
+</html>

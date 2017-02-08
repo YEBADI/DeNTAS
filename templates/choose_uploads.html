@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<title>Choose</title>
+<head>
+<title>Choose files</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <style>
@@ -9,16 +10,17 @@ body {font-family: "Raleway", Arial, sans-serif;
       background-size: cover;
       background-color: hsla(0,0%,0%,1);}
 </style>
+</head>
 <body>
 
-<!-- Navbar -->
+<!-- Navigation bar -->
  <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
       <a href="/" class="w3-btn-block w3-hover-white">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.html" class="w3-btn-block w3-hover-white">ABOUT US</a>
+      <a href="about.html" class="w3-btn-block w3-hover-white">ABOUT</a>
     </div>
     <div class="w3-col s3">
       <a href="https://github.com/Sakimonk/mandarin" class="w3-btn-block w3-hover-white">CONTACT</a>
@@ -29,39 +31,41 @@ body {font-family: "Raleway", Arial, sans-serif;
   </div>
 </div>
 
-  </head>
- 
-
-  <body>
-    <div id ="loading"></div>
-    <div id="content" class="container">
-      <div class="header">
-        <h3 class="text-muted">Uploaded files</h3>
-      </div>
-      <hr/>
-      <!-- Upload files -->
+<!-- Upload files -->
 <div class="w3-container w3-padding-64 w3-center">
-   <div id="content" style="width:980px;margin:0 auto;"></div>
-      <div class="w3-container w3-padding-64 w3-center">
-        <div class="w3-display-middle w3-padding w3-hide-small" style="width:35%">
-           <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+  <div id="content" style="width:980px;margin:0 auto;"></div>
+    <div class="w3-container w3-padding-64 w3-center">
+      <div class="w3-display-middle w3-padding w3-hide-small" style="width:35%">
+	<br />
+	<br />
+         <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
 <div class="container">
   <div class="header">
-  <h1 class="text-muted">UPLOAD FILES</h1>
+    <h1 class="text-muted">UPLOAD FILES</h1>
+    <p>Please input your experimental groups:</p>
   </div>
-  <hr/>
-  <div>
-    <form action="upload" method="post" enctype="multipart/form-data"> 
-      
-      <input name="Group 1" type="text" name="Group 1" value=""  /><br />
-      <input name="Group 2" type="text" name="Group 2" value=""  /></br />
-      <input name="Group 3" type="text" name="Group 3" value="" /><br />
-      <p></p>
+</div>
 
-      <input type="file" multiple="" name="file[]" class="span3" /><br />
-      <input type="submit" value="Upload"  class="span2">
-    </form>
-      </div>
-    </div>
-  </body>
+<!-- Input the sample status -->
+<form action="upload" method="post" enctype="multipart/form-data"> 
+  <input type="text" name="Group 1" placeholder="Group 1 (Required)" value=""> 
+  <input type="text" name="Group 2" placeholder="Group 2 (Required)" value="">
+  <input type="text" name="Group 3" placeholder="Group 3 (Optional)" value="">
+  <input type="text" name="Group 4" placeholder="Group 4 (Optional)" value=""> 
+  <p></p>
+  <input type="file" multiple="" name="file[]" class="span3"> 
+
+<!-- Line break -->
+<br />
+<br />
+
+   <input type="submit" value="Upload"  class="span2">
+</form>
+
+       </div>
+     </div>
+   </div>
+</div>
+
+</body>
 </html>
