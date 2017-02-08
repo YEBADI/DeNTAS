@@ -34,7 +34,7 @@ for uploaded_file in uploaded_files:
 for (raw_file, blast_file) in zip(raw_files, blast_files):
     cmd="blastn -db ", database, " -query ", raw_file, \
     \
-    " -outfmt \"6 qseqid sseqid stitle\" -max_target_seqs 1 -out ", blast_file
+    " -outfmt \"6 qseqid sseqid stitle\" -max_target_seqs 1 -evalue 0.001 -num_threads 4 -out ", blast_file
 
     cmd=''.join(cmd)
     print cmd   
