@@ -1,0 +1,88 @@
+Table of Contents
+
+1.	Introduction………………………………………………………...........................2
+1.1	Background………………………………………………………………….....2
+1.2	History…………………………………………………………………………...2
+2.	Creating and editing HTML documents……………………………………….....2
+3.	Structure of the web page……………………………………………………..…..2
+3.1	HTML tags and formatting…………………………………………..…….3
+3.2	CSS…………………………………………………………………..……...4
+3.3	Java Script…………………………………………………………..………4
+4.	Web standards and  compatibility ………………………………...……..……….4
+
+
+ 
+HyperText Mark-up Language 
+1.Introduction 
+Creating a basic web page involves a few steps including start with the content, give structure to the document, identify text elements, add images, change the style and formatting as this requires the use of HTML (short for HyperText Mark-up Language) attributes. 
+1.1 Background
+The web-based interface was created using HTML which is a text-based data format based on the tags and content used.  In an HTML documents the tags are defined in a vocabulary. The definition and syntax of these tags is very important for the overall structure of the document.
+1.2 History
+Tim Berners-Lee developed and defined the HTML language using SGML (Standard Generalized Markup Language). In the early 1990 HTML had unappreciated level of success and that is why a few people knew about it. The process of standardization of HTML has been a challenge with browser companies, academic and software engineers. A few years later HTML extended its initial form and become available to programmers and developers across the world.
+2.   Creating and editing HTML documents
+Writing and editing HTML document is done using both Adobe Dreamweaver CC and standard text editor. Adobe Dreamweaver CC is unique and flexible coding engine for creating user-friendly web-interface implementing some modern features such as CSS (Cascading Style Sheets). It is used from front end developers and designers across the world to manage websites. What makes it unique and easy to use is its visual aids, auto-indentation, code coloring and resizable fonts that reduce errors and make the code readable. 
+3. Structure of the web page 
+The HTML pages are surrounded by <html> tags, two main sections< head> and  <body> contain the meta data, title, links to external resources such as Cascading Style Sheets (CSS) and JavaScript files. The <!DOCTYPE html> on the top is recognized by the browser of how the web page is formatted. 
+
+
+
+
+The basic structure of HTML document:
+ <!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+</html>
+3.1  HTML tags and formatting
+	Commonly used <head> tags:
+<title> Defines the title of the webpage.
+<meta> Defines any metadata used to specify page description.
+<style> Defines the style of the webpage in accordance with CSS stylesheet.
+<link> Links  with external resources.
+<script> Introduces JavaScript code or link to external JavaScript file.
+	Commonly used <body> tags:
+<a> Links with different pages within the website but also to other external websites.
+<br /> Defines a line break.
+<button> Defines clickable button.
+<div> Defines a section.
+<footer> Defines copyright information.
+<form> Defines user input such as test field and many more.
+<h1> to <h6> Defines a number of heading level.
+<header> Defines container with introductory content. 
+<img /> Introduces images to the webpages, src indicates filenames and its position and alt indicates the name of the image.
+<input> Defines a field that allows the user to enter data.
+<ol>  Defines a ‘list term’ <li>
+<p> Defines a paragraph of text.
+<select> Defines a list of options <option>
+<strong> Defines important text.
+<tbody> Defines a table.
+<td> Defines a normal table column.
+<! -- -- > Add comments.
+3.2 CSS
+CSS describes the style of an HTML document. The syntax of CSS is quite simple and is contained with the <head> section of an HTML document. The web browser will use this information when opening an HTML document. The CSS code is contained within the <style> tags and is made up of a list of declarations such as those listed below: 
+	body: 
+•	font- family-specifies the font for an element.
+•	background-image-sets background image for an element.
+•	background-size- specify the size of the image.
+•	background color-sets the background color.
+	loading:
+•	position-specify the type of positioning method.
+•	top-sets the top position in percent.
+•	left-sets the left position in percent.
+	loading bar:  
+•	display- displays an inline-block element.
+•	width- sets the width of an element.
+•	height- sets the height of an element.
+•	border-radius- adds rounded corners.
+•	animation- specify a name for a few properties.
+	loading-bar nth-child:
+•	background-color- sets the background color.
+•	animation delay- specify a delay for the start of an animation.
+	keyframes loading:
+•	transform- allows  to scale elements.
+3.3 JavaScript
+Add comments here!
+4. Web standards and compatibility
+An HTML document could be created both correctly and incorrectly. Web browsers have the ability to deal with small mistakes and cover errors in the HTML code, therefore it is important to follow the HTML standards correctly and test the page on different browsers.  World Wide Web Consortium (W3C) offers validation service that allows checking whether or not the created HTML page follows the standards. This service can be found at validator.w3.org it gives the user to validate the file by URL checking, uploading the file or pasting some of the HTML code. 
