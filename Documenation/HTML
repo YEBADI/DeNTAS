@@ -86,3 +86,5 @@ CSS describes the style of an HTML document. The syntax of CSS is quite simple a
 Add comments here!
 4. Web standards and compatibility
 An HTML document could be created both correctly and incorrectly. Web browsers have the ability to deal with small mistakes and cover errors in the HTML code, therefore it is important to follow the HTML standards correctly and test the page on different browsers.  World Wide Web Consortium (W3C) offers validation service that allows checking whether or not the created HTML page follows the standards. This service can be found at validator.w3.org it gives the user to validate the file by URL checking, uploading the file or pasting some of the HTML code. 
+5. Limitations 
+One of the main limitations of web design is the display resolution and web browsers implementation and support of HTML standards. Another important thing to consider is the user’s monitor resolution and color settings that will be used to view the web site. Moreover, what browser is being used as a viewpoint and the different setups of web browsers.  
