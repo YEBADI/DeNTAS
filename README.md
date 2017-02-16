@@ -32,9 +32,10 @@ DeNTAS harnesses the power of high performance cluster computing to increase the
 Therefore execution of the software on a local machine has the following requirements the user must:
 
 ###1) Have secure access to Apocrita without the need for a pasword 
-   >> ssh-keygen (hit enter 3 times)
+  ``` >> ssh-keygen (hit enter 3 times)
    >> ssh-copy-id <username>@login.hpc.qmul.ac.uk (input your apocrita password)
    >> ssh <username>@login.hpc.qmul.ac.uk (test connectivity)
+   ```
 
 ###2) Utilise this secure access to enable direct connection to the remote-server, Apocrita, when the app is run. 
 This needs a one-time setup on the user device. Once the user has obtained the app folder, they must make the specific change of the code text "<username>" to reflect their own apocrita username to all of the script files found in the "> app/scripts/apocrita" directory.
