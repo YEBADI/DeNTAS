@@ -43,9 +43,9 @@ This can be performed with ease through an appropriate text editor which is capa
 ##Running DeNTAS
 Now that the local user machine has been set up as a local server with direct connection to the remote server (apocrita), the user can execute the app through the terminal by going into the app's directory and using the following command:
 
-'''code
+```
 python app.py
-'''
+```
 
 ##How to Use DeNTAS Well
 The user should submit appropriate de novo transcriptome data with the known FPKM values in order for DeNTAS to function effectively.
