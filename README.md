@@ -32,8 +32,13 @@ DeNTAS harnesses the power of high performance cluster computing to increase the
 Therefore execution of the software on a local machine has the following requirements the user must:
 
 ###1) Have secure access to Apocrita without the need for a pasword 
-  ``` >> ssh-keygen (hit enter 3 times)
+   ```
+   >> ssh-keygen (hit enter 3 times)
+   ```
+   ```
    >> ssh-copy-id <username>@login.hpc.qmul.ac.uk (input your apocrita password)
+   ```
+   ```
    >> ssh <username>@login.hpc.qmul.ac.uk (test connectivity)
    ```
 
