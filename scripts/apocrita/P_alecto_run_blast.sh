@@ -3,6 +3,7 @@
 #$ -V                   # env variables
 #$ -j y # and put all stdout and stderr into the same file 
 #$ -l h_rt=1:0:0 # Request 1 hour runtime (upto 240 hours)
+#$ -pe smp 4            # Request 4 CPU cores
 #$ -l h_vmem=3G         # Request 1GB RAM / core,
 
 # <username> must be changed to reflect your apocrita username eg bt16003

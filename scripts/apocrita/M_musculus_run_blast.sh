@@ -8,6 +8,7 @@
 
 # <username> must be changed to reflect your apocrita username eg bt16003
 # this script will only work if you have set up a secure key access to apocrita
+
 module load blast+
-/data/scratch/<username>/group_project/P_alecto_run_blast.sh
+/data/scratch/<username>/group_project/M_musculus_blast.py
 echo 'WORK WORK'  # prints to your output file
