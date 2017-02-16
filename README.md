@@ -38,3 +38,18 @@ Therefore execution of the software on a local machine has the following require
 2) Utilise this secure access to enable direct connection to the remote-server, Apocrita, when the app is run. This needs a one-time setup on the user device. Once the user has obtained the app folder, they must make the specific change of the code text "<username>" to reflect their own apocrita username to all of the script files found in the "> app/scripts/apocrita" directory.
 
 This can be performed with ease through an appropriate text editor which is capable of detecting multiple instances of the word "<username>" and enables the user to multi-word edit each instance (for example, 'Sublime' offers this functionality).
+
+
+##Running DeNTAS
+Now that the local user machine has been set up as a local server with direct connection to the remote server (apocrita), the user can execute the app through the terminal by going into the app's directory and using the following command:
+
+'''code
+python app.py
+'''
+
+##How to Use DeNTAS Well
+The user should submit appropriate de novo transcriptome data with the known FPKM values in order for DeNTAS to function effectively.
+
+##Interpretting Results
+
+##Contact Us for Troubleshooting
