@@ -58,6 +58,4 @@ python app.py
 ## How to Use DeNTAS Well
 The user should submit appropriate de novo transcriptome data with the known FPKM values in order for DeNTAS to function effectively.
 
-## Interpretting Results
-
 ## Contact Us for Troubleshooting
